@@ -8,8 +8,7 @@ module OmniAuth
       option :name, 'aqua_provider'
 
       option :client_options, { 
-                                # :site => 'http://api.aqua.io',
-                                :site => 'http://api.aquahost.com:3000',
+                                :site => 'http://api.aqua.io',
                                 :authorize_path => 'providers/oauth/authenticate',
                                 :request_token_path => 'providers/oauth/token'
                               }
