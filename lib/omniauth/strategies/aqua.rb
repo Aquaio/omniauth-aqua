@@ -40,36 +40,16 @@ module OmniAuth
 
     end
 
-    # class AquaMember < OmniAuth::Strategies::OAuth2
-    #   option :name, 'aqua_member'
+    class AquaProviderSandbox < AquaProvider
+      option :name, 'aqua_provider_sandbox'
 
-    #   option :client_options, { 
-    #                             :site => 'http://api.aqua.io',
-    #                             :authorize_path => 'members/oauth/authenticate',
-    #                             :request_token_path => 'members/oauth/token'
-    #                           }
+      option :client_options, { 
+                                :site => 'http://sandbox.aqua.io',
+                                :authorize_path => 'providers/oauth/authenticate',
+                                :request_token_path => 'providers/oauth/token'
+                              }
 
-    #   uid { access_token.params[:user_id] }
-
-    #   info do
-    #     {
-    #       :first_name   => raw_info['first_name'],
-    #       :last_name    => raw_info['last_name'],
-    #       :user_type    => raw_info['user_type']
-    #     }
-    #   end
-
-    #   extra do
-    #     { :raw_info => raw_info }
-    #   end
-
-    #   def raw_info
-    #     @raw_info ||= MultiJson.decode(access_token.get('beta/members/me.json').body)
-    #   rescue ::Errno::ETIMEDOUT
-    #     raise ::Timeout::Error
-    #   end
-
-    # end
+    end
 
   end
 end
